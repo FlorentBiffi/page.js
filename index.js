@@ -589,12 +589,12 @@
       path = path.substr(base.length);
     }
 
-    if (hashbang) path = path.replace('#!', '');
+    if (hashbang) path = '/' + path.replace('#!', '');
 
     if (base && orig === path) return;
 
     e.preventDefault();
-    page.show(orig);
+    page.show(path);
   }
 
   /**
